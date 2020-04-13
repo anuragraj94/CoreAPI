@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\anura\\source\\repos\\WebAPI\\WebAPI\\WebAPI.csproj": {}
+    "E:\\CoreAPI\\WebAPI\\WebAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\anura\\source\\repos\\WebAPI\\WebAPI\\WebAPI.csproj": {
+    "E:\\CoreAPI\\WebAPI\\WebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\anura\\source\\repos\\WebAPI\\WebAPI\\WebAPI.csproj",
+        "projectUniqueName": "E:\\CoreAPI\\WebAPI\\WebAPI.csproj",
         "projectName": "WebAPI",
-        "projectPath": "C:\\Users\\anura\\source\\repos\\WebAPI\\WebAPI\\WebAPI.csproj",
+        "projectPath": "E:\\CoreAPI\\WebAPI\\WebAPI.csproj",
         "packagesPath": "C:\\Users\\anura\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\anura\\source\\repos\\WebAPI\\WebAPI\\obj\\",
+        "outputPath": "E:\\CoreAPI\\WebAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -96,7 +96,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

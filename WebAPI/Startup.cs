@@ -26,6 +26,13 @@ namespace WebAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //Added this 
+            services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
+            {
+                builder.AllowAnyOrigin()
+                       .AllowAnyMethod()
+                       .AllowAnyHeader();
+            }));
             services.AddControllers();
             services.AddDbContext<DoctorDBContex>(options=> options.UseSqlServer(Configuration.GetConnectionString("EntityCon")));
         }
@@ -37,6 +44,8 @@ namespace WebAPI
             {
                 app.UseDeveloperExceptionPage();
             }
+            //Added this 
+            app.UseCors("MyPolicy");
 
             app.UseRouting();
 
