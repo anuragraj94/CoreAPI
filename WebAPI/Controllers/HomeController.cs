@@ -1,11 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Security.Claims;
+using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
 using WebAPI.Models;
 
 namespace WebAPI.Controllers
@@ -17,11 +22,63 @@ namespace WebAPI.Controllers
     public class HomeController : ControllerBase
     {
         private readonly DoctorDBContex _context;
+        private IConfiguration _config;
 
-        public HomeController(DoctorDBContex context)
+        public HomeController(DoctorDBContex context, IConfiguration config)
         {
             _context = context;
+            _config = config;
         }
+
+        //http://localhost:64275/api/home/login?username=abc&pass=123
+        [HttpGet(template:"login", Name ="login_Get")]
+         public IActionResult Login(string username,string pass)
+         {
+             UserModel login = new UserModel();
+             login.UserName = username;
+             login.Password = pass;
+             IActionResult response = Unauthorized();
+
+             var user = Authenticateuser(login);
+
+             if (user!=null)
+             {
+                 var tokenStr = GenerateJSONWebToken(user);
+                 response = Ok(new { tokenStr });
+             }
+             return response;
+         }
+         private UserModel Authenticateuser(UserModel login)
+         {
+             UserModel user = null;
+             if (login.UserName=="abc"&& login.Password=="123")
+             {
+                 user = new UserModel { UserName = "ABC", Password = "123" };
+             }
+             return user;
+         }
+         private string GenerateJSONWebToken(UserModel userinfo)
+         {
+             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
+             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
+
+             var claims = new[]
+             {
+                 new Claim(JwtRegisteredClaimNames.Sub,userinfo.UserName),
+                 new Claim(JwtRegisteredClaimNames.Jti,Guid.NewGuid().ToString()),
+             };
+
+             var token = new JwtSecurityToken(
+                 issuer: _config["Jwt:Issuer"],
+                 audience: _config["Jwt:Issuer"],
+                 claims,
+                 expires: DateTime.Now.AddMinutes(120),
+                 signingCredentials: credentials);
+
+             var encodedtoken = new JwtSecurityTokenHandler().WriteToken(token);
+             return encodedtoken;
+         }
+
 
         // GET: api/Home
         [HttpGet]
@@ -78,7 +135,7 @@ namespace WebAPI.Controllers
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPost]
         public async Task<ActionResult<CandidateModel>> PostCandidateModel(CandidateModel candidateModel)
-        {
+        {            
             _context.CandidateModels.Add(candidateModel);
             await _context.SaveChangesAsync();
 

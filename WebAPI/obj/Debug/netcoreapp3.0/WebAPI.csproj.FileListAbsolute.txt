@@ -251,8 +251,6 @@ E:\CoreAPI\WebAPI\bin\Debug\netcoreapp3.0\runtimes\unix\lib\netcoreapp2.0\System
 E:\CoreAPI\WebAPI\bin\Debug\netcoreapp3.0\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 E:\CoreAPI\WebAPI\bin\Debug\netcoreapp3.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 E:\CoreAPI\WebAPI\obj\Debug\netcoreapp3.0\WebAPI.csprojAssemblyReference.cache
-E:\CoreAPI\WebAPI\obj\Debug\netcoreapp3.0\WebAPI.csproj.CoreCompileInputs.cache
-E:\CoreAPI\WebAPI\obj\Debug\netcoreapp3.0\WebAPI.MvcApplicationPartsAssemblyInfo.cache
 E:\CoreAPI\WebAPI\obj\Debug\netcoreapp3.0\WebAPI.AssemblyInfoInputs.cache
 E:\CoreAPI\WebAPI\obj\Debug\netcoreapp3.0\WebAPI.AssemblyInfo.cs
 E:\CoreAPI\WebAPI\obj\Debug\netcoreapp3.0\WebAPI.RazorTargetAssemblyInfo.cache
@@ -262,3 +260,12 @@ E:\CoreAPI\WebAPI\obj\Debug\netcoreapp3.0\staticwebassets\WebAPI.StaticWebAssets
 E:\CoreAPI\WebAPI\obj\Debug\netcoreapp3.0\WebAPI.dll
 E:\CoreAPI\WebAPI\obj\Debug\netcoreapp3.0\WebAPI.pdb
 E:\CoreAPI\WebAPI\obj\Debug\netcoreapp3.0\WebAPI.genruntimeconfig.cache
+E:\CoreAPI\WebAPI\bin\Debug\netcoreapp3.0\Microsoft.IdentityModel.Logging.dll
+E:\CoreAPI\WebAPI\bin\Debug\netcoreapp3.0\Microsoft.IdentityModel.Tokens.dll
+E:\CoreAPI\WebAPI\bin\Debug\netcoreapp3.0\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\CoreAPI\WebAPI\bin\Debug\netcoreapp3.0\System.IdentityModel.Tokens.Jwt.dll
+E:\CoreAPI\WebAPI\bin\Debug\netcoreapp3.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+E:\CoreAPI\WebAPI\bin\Debug\netcoreapp3.0\Microsoft.IdentityModel.Protocols.dll
+E:\CoreAPI\WebAPI\bin\Debug\netcoreapp3.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+E:\CoreAPI\WebAPI\obj\Debug\netcoreapp3.0\WebAPI.csproj.CoreCompileInputs.cache
+E:\CoreAPI\WebAPI\obj\Debug\netcoreapp3.0\WebAPI.MvcApplicationPartsAssemblyInfo.cache
